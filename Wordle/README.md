@@ -13,7 +13,7 @@ Steps:
 
 0-	 Imported a dictionary of English words and cleaned the csv file for the purpose of game
 
-1-	 Link to the original dictionary dataset: “”
+1-	 Link to the original dictionary dataset: “https://www.kaggle.com/datasets/therohk/urban-dictionary-words-dataset”
 
 2-	Read the csv into a list of words
 
