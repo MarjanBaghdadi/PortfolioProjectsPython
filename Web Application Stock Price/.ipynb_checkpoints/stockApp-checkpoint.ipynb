@@ -1,0 +1,183 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting streamlit\n",
+      "  Using cached https://files.pythonhosted.org/packages/46/73/0b497b5dbf99079c7f70dab726798945390477f1fd3a6b036188e1a3b90c/streamlit-1.12.2-py2.py3-none-any.whl\n",
+      "Requirement already satisfied: packaging>=14.1 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from streamlit) (19.2)\n",
+      "Collecting blinker>=1.0.0 (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/30/41/caa5da2dbe6d26029dfe11d31dfa8132b4d6d30b6d6b61a24824075a5f06/blinker-1.5-py2.py3-none-any.whl\n",
+      "Collecting semver (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/0b/70/b84f9944a03964a88031ef6ac219b6c91e8ba2f373362329d8770ef36f02/semver-2.13.0-py2.py3-none-any.whl\n",
+      "Collecting altair>=3.2.0 (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/0a/fb/56aaac0c69d106e380ff868cd5bb6cccacf2b8917a8527532bc89804a52e/altair-4.2.0-py3-none-any.whl\n",
+      "Collecting typing-extensions>=3.10.0.0 (from streamlit)\n",
+      "  Downloading https://files.pythonhosted.org/packages/ed/d6/2afc375a8d55b8be879d6b4986d4f69f01115e795e36827fd3a40166028b/typing_extensions-4.3.0-py3-none-any.whl\n",
+      "Collecting validators>=0.2 (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/95/14/ed0af6865d378cfc3c504aed0d278a890cbefb2f1934bf2dbe92ecf9d6b1/validators-0.20.0.tar.gz\n",
+      "Collecting rich>=10.11.0 (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/f6/39/4cb526e0d505464376e3c47a812df6e6638363ebe66e6a63618831fe47ad/rich-12.5.1-py3-none-any.whl\n",
+      "Requirement already satisfied: pandas>=0.21.0 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from streamlit) (0.25.1)\n",
+      "Requirement already satisfied: click>=7.0 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from streamlit) (7.0)\n",
+      "Collecting protobuf<4,>=3.12 (from streamlit)\n",
+      "  Downloading https://files.pythonhosted.org/packages/36/16/cfba8fcd817df923827233115df35dc048af12d0afa13df79b303865855a/protobuf-3.20.1-cp37-cp37m-win_amd64.whl (905kB)\n",
+      "Collecting cachetools>=4.0 (from streamlit)\n",
+      "  Downloading https://files.pythonhosted.org/packages/68/aa/5fc646cae6e997c3adf3b0a7e257cda75cff21fcba15354dffd67789b7bb/cachetools-5.2.0-py3-none-any.whl\n",
+      "Collecting pyarrow>=4.0 (from streamlit)\n",
+      "  Downloading https://files.pythonhosted.org/packages/69/d7/13fe02f4ab0f86a7ed9e82c0514d9748587366ac34192cb69b32ba44c325/pyarrow-9.0.0-cp37-cp37m-win_amd64.whl (19.5MB)\n",
+      "Requirement already satisfied: numpy in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from streamlit) (1.16.5)\n",
+      "Collecting tzlocal>=1.1 (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/31/b7/3bc2c1868f27677139b772e4fde95265b93151912fd90eb874827943bfcf/tzlocal-4.2-py3-none-any.whl\n",
+      "Requirement already satisfied: requests>=2.4 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from streamlit) (2.28.1)\n",
+      "Collecting pympler>=0.9 (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/2c/42/41e1469ed0b37b9c8532cb8074bea179f7d85ee7e82a59b5b6c289ed6045/Pympler-1.0.1-py3-none-any.whl\n",
+      "Requirement already satisfied: tornado>=5.0 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from streamlit) (6.0.3)\n",
+      "Requirement already satisfied: python-dateutil in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from streamlit) (2.8.0)\n",
+      "Collecting gitpython!=3.1.19 (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/83/32/ce68915670da6fd6b1e3fb4b3554b4462512f6441dddd194fc0f4f6ec653/GitPython-3.1.27-py3-none-any.whl\n",
+      "Requirement already satisfied: pillow>=6.2.0 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from streamlit) (6.2.0)\n",
+      "Collecting toml (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl\n",
+      "Collecting importlib-metadata>=1.4 (from streamlit)\n",
+      "  Downloading https://files.pythonhosted.org/packages/d2/a2/8c239dc898138f208dd14b441b196e7b3032b94d3137d9d8453e186967fc/importlib_metadata-4.12.0-py3-none-any.whl\n",
+      "Collecting watchdog; platform_system != \"Darwin\" (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/61/3f/a2fc9452b8161862a78674fda583d8e1addbbecf57a1e172b4a7a96e8087/watchdog-2.1.9-py3-none-win_amd64.whl\n",
+      "Collecting pydeck>=0.1.dev5 (from streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/04/c2/cb42b557b6bc99e793f9d7a0e93337a15a09a96468821f1507ef5b019102/pydeck-0.8.0b1-py2.py3-none-any.whl\n",
+      "Requirement already satisfied: pyparsing>=2.0.2 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from packaging>=14.1->streamlit) (2.4.2)\n",
+      "Requirement already satisfied: six in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from packaging>=14.1->streamlit) (1.12.0)\n",
+      "Requirement already satisfied: jsonschema>=3.0 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from altair>=3.2.0->streamlit) (3.0.2)\n",
+      "Requirement already satisfied: entrypoints in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from altair>=3.2.0->streamlit) (0.3)\n",
+      "Requirement already satisfied: toolz in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from altair>=3.2.0->streamlit) (0.10.0)\n",
+      "Requirement already satisfied: jinja2 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from altair>=3.2.0->streamlit) (2.10.3)\n",
+      "Requirement already satisfied: decorator>=3.4.0 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from validators>=0.2->streamlit) (4.4.0)\n",
+      "Collecting pygments<3.0.0,>=2.6.0 (from rich>=10.11.0->streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/4f/82/672cd382e5b39ab1cd422a672382f08a1fb3d08d9e0c0f3707f33a52063b/Pygments-2.13.0-py3-none-any.whl\n",
+      "Collecting commonmark<0.10.0,>=0.9.0 (from rich>=10.11.0->streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/b1/92/dfd892312d822f36c55366118b95d914e5f16de11044a27cf10a7d71bbbf/commonmark-0.9.1-py2.py3-none-any.whl\n",
+      "Requirement already satisfied: pytz>=2017.2 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from pandas>=0.21.0->streamlit) (2019.3)\n",
+      "Collecting tzdata; platform_system == \"Windows\" (from tzlocal>=1.1->streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/71/9b/8b9fea4f4dc956de76baa291cec1c864a8edadf2950d1740bc386d7fe55a/tzdata-2022.2-py2.py3-none-any.whl\n",
+      "Collecting pytz-deprecation-shim (from tzlocal>=1.1->streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/eb/73/3eaab547ca809754e67e06871cff0fc962bafd4b604e15f31896a0f94431/pytz_deprecation_shim-0.1.0.post0-py2.py3-none-any.whl\n",
+      "Collecting backports.zoneinfo; python_version < \"3.9\" (from tzlocal>=1.1->streamlit)\n",
+      "  Downloading https://files.pythonhosted.org/packages/6c/99/513f2c4dd41522eefc42feb86854f6cf3b1add9c175c14d90c070775e484/backports.zoneinfo-0.2.1-cp37-cp37m-win_amd64.whl\n",
+      "Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from requests>=2.4->streamlit) (1.24.2)\n",
+      "Requirement already satisfied: idna<4,>=2.5 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from requests>=2.4->streamlit) (2.8)\n",
+      "Requirement already satisfied: charset-normalizer<3,>=2 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from requests>=2.4->streamlit) (2.1.1)\n",
+      "Requirement already satisfied: certifi>=2017.4.17 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from requests>=2.4->streamlit) (2019.9.11)\n",
+      "Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.19->streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/a3/7c/5d747655049bfbf75b5fcec57c8115896cb78d6fafa84f6d3ef4c0f13a98/gitdb-4.0.9-py3-none-any.whl\n",
+      "Requirement already satisfied: zipp>=0.5 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from importlib-metadata>=1.4->streamlit) (0.6.0)\n",
+      "Requirement already satisfied: attrs>=17.4.0 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from jsonschema>=3.0->altair>=3.2.0->streamlit) (19.2.0)\n",
+      "Requirement already satisfied: pyrsistent>=0.14.0 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from jsonschema>=3.0->altair>=3.2.0->streamlit) (0.15.4)\n",
+      "Requirement already satisfied: setuptools in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from jsonschema>=3.0->altair>=3.2.0->streamlit) (41.4.0)\n",
+      "Requirement already satisfied: MarkupSafe>=0.23 in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from jinja2->altair>=3.2.0->streamlit) (1.1.1)\n",
+      "Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.19->streamlit)\n",
+      "  Using cached https://files.pythonhosted.org/packages/6d/01/7caa71608bc29952ae09b0be63a539e50d2484bc37747797a66a60679856/smmap-5.0.0-py3-none-any.whl\n",
+      "Requirement already satisfied: more-itertools in c:\\users\\marjan\\anaconda3\\lib\\site-packages (from zipp>=0.5->importlib-metadata>=1.4->streamlit) (7.2.0)\n",
+      "Building wheels for collected packages: validators\n",
+      "  Building wheel for validators (setup.py): started\n",
+      "  Building wheel for validators (setup.py): finished with status 'done'\n",
+      "  Created wheel for validators: filename=validators-0.20.0-cp37-none-any.whl size=19572 sha256=c01168cc032fbd26646fc94fe16efacd63a4576bd06dc6948aa89767e13aed4c\n",
+      "  Stored in directory: C:\\Users\\Marjan\\AppData\\Local\\pip\\Cache\\wheels\\78\\02\\9b\\6792cb888287d119f314664ab5e7579eaff131cccf18815757\n",
+      "Successfully built validators\n",
+      "Installing collected packages: blinker, semver, altair, typing-extensions, validators, pygments, commonmark, rich, protobuf, cachetools, pyarrow, tzdata, backports.zoneinfo, pytz-deprecation-shim, tzlocal, pympler, smmap, gitdb, gitpython, toml, importlib-metadata, watchdog, pydeck, streamlit\n",
+      "  Found existing installation: Pygments 2.4.2\n",
+      "    Uninstalling Pygments-2.4.2:\n",
+      "      Successfully uninstalled Pygments-2.4.2\n",
+      "  Found existing installation: importlib-metadata 0.23\n",
+      "    Uninstalling importlib-metadata-0.23:\n",
+      "      Successfully uninstalled importlib-metadata-0.23\n",
+      "Successfully installed altair-4.2.0 backports.zoneinfo-0.2.1 blinker-1.5 cachetools-5.2.0 commonmark-0.9.1 gitdb-4.0.9 gitpython-3.1.27 importlib-metadata-4.12.0 protobuf-3.20.1 pyarrow-9.0.0 pydeck-0.8.0b1 pygments-2.13.0 pympler-1.0.1 pytz-deprecation-shim-0.1.0.post0 rich-12.5.1 semver-2.13.0 smmap-5.0.0 streamlit-1.12.2 toml-0.10.2 typing-extensions-4.3.0 tzdata-2022.2 tzlocal-4.2 validators-0.20.0 watchdog-2.1.9\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "ERROR: spyder 3.3.6 requires pyqt5<5.13; python_version >= \"3\", which is not installed.\n",
+      "ERROR: spyder 3.3.6 requires pyqtwebengine<5.13; python_version >= \"3\", which is not installed.\n",
+      "ERROR: pyarrow 9.0.0 has requirement numpy>=1.16.6, but you'll have numpy 1.16.5 which is incompatible.\n",
+      "2022-08-28 17:35:04.386 \n",
+      "  \u001b[33m\u001b[1mWarning:\u001b[0m to view this Streamlit app on a browser, run it with the following\n",
+      "  command:\n",
+      "\n",
+      "    streamlit run C:\\Users\\Marjan\\Anaconda3\\lib\\site-packages\\ipykernel_launcher.py [ARGUMENTS]\n",
+      "2022-08-28 17:35:05.043 NumExpr defaulting to 4 threads.\n",
+      "C:\\Users\\Marjan\\Anaconda3\\lib\\site-packages\\streamlit\\elements\\arrow_altair.py:380: FutureWarning: A future version of pandas will default to `skipna=True`. To silence this warning, pass `skipna=True|False` explicitly.\n",
+      "  data_df, selected_columns=[x_column, color_column, y_column]\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "DeltaGenerator(_root_container=0, _provided_cursor=None, _parent=None, _block_type=None, _form_data=None)"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import yfinance as yf\n",
+    "%pip install streamlit\n",
+    "import streamlit as st\n",
+    "\n",
+    "st.write(\"\"\"\n",
+    "# Simple Stock Price App\n",
+    "Shown are the stock closing price and volume of Google!\n",
+    "\"\"\")\n",
+    "\n",
+    "# https://towardsdatascience.com/how-to-get-stock-data-using-python-c0de1df17e75\n",
+    "#define the ticker symbol\n",
+    "tickerSymbol = 'GOOGL'\n",
+    "#get data on this ticker\n",
+    "tickerData = yf.Ticker(tickerSymbol)\n",
+    "#get the historical prices for this ticker\n",
+    "tickerDf = tickerData.history(period='1d', start='2010-5-31', end='2020-5-31')\n",
+    "# Open\tHigh\tLow\tClose\tVolume\tDividends\tStock Splits\n",
+    "\n",
+    "st.line_chart(tickerDf.Close)\n",
+    "st.line_chart(tickerDf.Volume)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
